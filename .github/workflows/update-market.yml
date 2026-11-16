@@ -1,0 +1,245 @@
+name: Update Market Weather (single file)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 23 * * 0-5' # JST 08:30 Monday-Saturday
+    - cron: '30 11 * * 1-5' # JST 20:30 Monday-Friday
+    - cron: '17 */3 * * *' # Refresh every 3 hours
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: market-weather-deploy
+  cancel-in-progress: false
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install ETF data tools
+        run: pip install 'yfinance>=0.2.55,<2' 'pandas>=2.2,<4' 'numpy>=1.26,<3'
+      - name: Fetch verified daily bars and classify signals
+        shell: bash
+        run: |
+          python - <<'PYMARKET'
+          #!/usr/bin/env python3
+          """Self-contained market update job embedded in a GitHub Actions YAML.
+          
+          US/Japan ETFs: Yahoo Finance daily bars, not exchange-certified.
+          Mutual funds: no automated classification until verified distribution-adjusted NAV data.
+          All failures fail-closed to an unknown signal.
+          """
+          import datetime as dt
+          import json
+          import math
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          
+          import numpy as np
+          import pandas as pd
+          import yfinance as yf
+          
+          HERE = Path.cwd()
+          FILE = HERE / 'data/market.json'
+          LOG = HERE / 'data/history.json'
+          TOKYO = ZoneInfo('Asia/Tokyo')
+          TICKERS = {
+              'SPY':'SPY','QQQ':'QQQ','IWM':'IWM','SMH':'SMH',
+              '1306':'1306.T','1321':'1321.T','GLD':'GLD',
+              'XLV':'XLV','XLF':'XLF','XLI':'XLI','XLK':'XLK',
+              'XLE':'XLE','XLU':'XLU','XLP':'XLP','XLY':'XLY',
+              'XLC':'XLC','XLB':'XLB','XLRE':'XLRE','JEPQ':'JEPQ'
+          }
+          FUNDS = ['THE5G','BEST','WCM','SBI43']
+          MACRO = {'USDJPY':'JPY=X','US10Y':'^TNX','GOLD_FUT':'GC=F'}
+          S = ['sunny','partly','neutral','rainy','storm','unknown']
+          NOW = dt.datetime.now(dt.timezone.utc)
+          
+          
+          def valid(x, ndigits=4):
+              try:
+                  value = float(x)
+                  return round(value, ndigits) if math.isfinite(value) else None
+              except (TypeError, ValueError, OverflowError):
+                  return None
+          
+          
+          def read_json(path, default):
+              try:
+                  return json.loads(path.read_text(encoding='utf-8'))
+              except (OSError, ValueError):
+                  return default
+          
+          
+          def frame_from(batch, ticker):
+              try:
+                  x = batch[ticker] if isinstance(batch.columns, pd.MultiIndex) else batch
+                  x = x.copy().dropna(subset=['Close'])
+                  x = x.loc[x['Close'] > 0]
+                  x.index = pd.to_datetime(x.index).date
+                  return x.loc[~pd.Index(x.index).duplicated(keep='last')]
+              except (KeyError, ValueError, TypeError, AttributeError):
+                  return pd.DataFrame()
+          
+          
+          def fetch_batch():
+              labels = list(dict.fromkeys(list(TICKERS.values()) + list(MACRO.values())))
+              try:
+                  return yf.download(
+                      tickers=' '.join(labels), period='9mo', interval='1d',
+                      auto_adjust=False, group_by='ticker', progress=False,
+                      threads=False, timeout=35)
+              except Exception as exc:
+                  print('Yahoo data request failed:', type(exc).__name__, str(exc)[:140])
+                  return pd.DataFrame()
+          
+          
+          def performance(x, n=20):
+              if len(x) <= n or float(x.iloc[-n-1]) <= 0:
+                  return None
+              return (float(x.iloc[-1])/float(x.iloc[-n-1])-1)*100
+          
+          
+          def signal_for(symbol, f, bench):
+              source = 'https://finance.yahoo.com/quote/' + TICKERS[symbol] + '/'
+              base = {'signal':'unknown','price':None,'changePct':None,'day':None,
+                      'session':'regular','sourceName':'Yahoo Finance（日次・非公式）',
+                      'sourceUrl':source,'quality':'未取得','reasons':['検証可能な最新データなし'],
+                      'history':[],'indicators':{},'confidence':'unknown'}
+              if f.empty or 'Close' not in f:
+                  return base
+              c = f['Close'].astype(float)
+              day = f.index[-1].isoformat()
+              base.update(price=valid(c.iloc[-1]), day=day, history=[valid(v) for v in c.tail(45)])
+              age = (NOW.astimezone(TOKYO).date() - f.index[-1]).days
+              if age < 0 or age > 6:
+                  base.update(quality='古い通常市場終値',reasons=['終値の日付が古い／不正なため評価保留'])
+                  return base
+              base['quality'] = '通常市場の確定日足（非公式ソース）'
+              base['changePct'] = valid((c.iloc[-1]/c.iloc[-2]-1)*100) if len(c)>=2 else None
+              sma = {n:valid(c.tail(n).mean()) if len(c)>=n else None for n in (5,20,50)}
+              ac = f['Adj Close'].astype(float) if 'Adj Close' in f else c
+              bc = (bench['Adj Close'].astype(float) if 'Adj Close' in bench else bench['Close'].astype(float)) if not bench.empty else pd.Series(dtype=float)
+              r20 = performance(ac)
+              br20 = performance(bc)
+              rs20 = r20-br20 if r20 is not None and br20 is not None else None
+              v = f['Volume'].astype(float).replace(0,np.nan) if 'Volume' in f else pd.Series(dtype=float)
+              vr = float(v.iloc[-1]/v.tail(20).mean()) if len(v)>=20 and pd.notna(v.tail(20).mean()) and v.tail(20).mean()>0 else None
+              ret = ac.pct_change(fill_method=None).dropna().tail(20)
+              volatility = float(ret.std(ddof=1)*np.sqrt(252)*100) if len(ret)>=20 else None
+              base['indicators'] = {'sma5':sma[5],'sma20':sma[20],'sma50':sma[50],
+                                    'rs20':valid(rs20),'return20':valid(r20),
+                                    'volumeRatio':valid(vr),'volatility':valid(volatility)}
+              if any(z is None for z in (sma[5],sma[20],sma[50],r20,rs20,vr)):
+                  base['reasons'] = ['50営業日・出来高・比較指標のいずれかが不足']
+                  return base
+              price = float(c.iloc[-1])
+              ups = price>sma[5]>sma[20]>sma[50]
+              downs = price<sma[5]<sma[20]<sma[50]
+              pos = sum([ups, r20>=2.5, rs20>=1.5, vr>=1.1, price>sma[20]])
+              neg = sum([downs, r20<=-2.5, rs20<=-1.5, vr>=1.1, price<sma[20]])
+              if ups and r20>=2.5 and rs20>=1.5 and vr>=1.1:
+                  status='sunny'
+              elif downs and r20<=-2.5 and rs20<=-1.5 and vr>=1.1:
+                  status='storm'
+              elif pos>=3 and r20>0 and price>sma[20]:
+                  status='partly'
+              elif neg>=3 and r20<0 and price<sma[20]:
+                  status='rainy'
+              else:
+                  status='neutral'
+              reasons=[f'20営業日騰落 {r20:+.1f}%・ベンチマーク差 {rs20:+.1f}pt',
+                       f'終値は20日線の{"上" if price>sma[20] else "下"}、出来高倍率 {vr:.2f}倍']
+              if symbol == 'JEPQ':
+                  # Daily prices alone do not establish income/option-adjusted total return.
+                  status = 'unknown'
+                  reasons = ['オプション収入と分配込み総収益が未検証。通常ETFと同じ基準では判定しない']
+              if symbol == 'GLD':
+                  status = 'unknown'
+                  reasons = ['金の実質金利・ドル要因の独立検証がないため見通し保留']
+              base.update(signal=status,reasons=reasons,confidence='medium' if status!='unknown' else 'unknown')
+              return base
+          
+          
+          def main():
+              FILE.parent.mkdir(exist_ok=True)
+              previous = read_json(FILE,{})
+              old_assets = previous.get('assets',{}) if not previous.get('demo') else {}
+              batch=fetch_batch()
+              frames={x:frame_from(batch,y) for x,y in {**TICKERS,**MACRO}.items()}
+              assets={}
+              for symbol in TICKERS:
+                  benchmark='1306' if symbol in ('1306','1321') else 'QQQ' if symbol=='JEPQ' else 'SPY'
+                  a=signal_for(symbol,frames[symbol],frames[benchmark])
+                  old=old_assets.get(symbol,{})
+                  if a['price'] is None and isinstance(old.get('price'),(int,float)):
+                      a.update(price=old['price'],day=old.get('day'),signal='unknown',
+                               history=old.get('history',[]),stale=True,quality='取得失敗・過去の最終確認値',
+                               reasons=['最新値は取得できず、過去の価格だけ参考表示'])
+                  assets[symbol]=a
+              for symbol in FUNDS:
+                  assets[symbol] = {'signal':'unknown','price':None,'changePct':None,'day':None,
+                                    'session':'NAV','quality':'分配込み基準価額未接続','confidence':'unknown',
+                                    'reasons':['基準価額と分配落ちを検証するデータ連携が未実装'],
+                                    'history':[],'indicators':{}}
+              for symbol,asset in assets.items():
+                  old=old_assets.get(symbol,{}).get('signal')
+                  if old in S and old!=asset['signal']:
+                      asset['previousSignal']=old
+              macro={}
+              for label, ticker in MACRO.items():
+                  f=frames[label]
+                  macro[label]={'value':valid(float(f['Close'].iloc[-1])/(10 if label=='US10Y' else 1)) if not f.empty else None,
+                                'day':f.index[-1].isoformat() if not f.empty else None,
+                                'sourceUrl':'https://finance.yahoo.com/quote/'+ticker+'/',
+                                'quality':'参考日次データ（リアルタイムではありません）'}
+              changes=[{'symbol':s,'from':old_assets[s]['signal'],'to':a['signal'],
+                        'reason':a['reasons'][0] if a['reasons'] else ''} for s,a in assets.items()
+                       if s in old_assets and old_assets[s].get('signal') in S and old_assets[s]['signal']!=a['signal']]
+              counts={x:sum(a['signal']==x for a in assets.values()) for x in S}
+              snapshot={'schemaVersion':1,'demo':False,'generatedAt':NOW.isoformat(),
+                        'marketSession':'通常市場日足／ファンド基準価額は未接続',
+                        'source':'Yahoo Finance（非公式の日次データ）',
+                        'note':'ChatGPT配信とは別の自動テクニカル分類。時間外・PTS・決算分析・投信分配込み総収益は含まれません。',
+                        'assets':assets,'macro':macro,'changes':changes,
+                        'coverage':{'validPrices':sum(a['price'] is not None and not a.get('stale') for a in assets.values()),
+                                    'total':len(assets),'rated':sum(a['signal']!='unknown' for a in assets.values())}}
+              FILE.write_text(json.dumps(snapshot,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+              history=read_json(LOG,[])
+              if not isinstance(history,list):history=[]
+              if changes or NOW.astimezone(TOKYO).hour in (8,20):
+                  history.append({'at':NOW.isoformat(),'kind':'自動更新','changes':changes,
+                                  'coverage':snapshot['coverage'],'signalCounts':counts})
+              LOG.write_text(json.dumps(history[-100:],ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+              print('Snapshot:',snapshot['coverage'],'source:',snapshot['source'])
+          
+          
+          if __name__=='__main__':
+              main()
+          PYMARKET
+      - name: Commit snapshots
+        shell: bash
+        run: |
+          git config user.name 'market-weather-bot'
+          git config user.email 'market-weather-bot@users.noreply.github.com'
+          git add data/market.json data/history.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'chore: refresh market weather'
+            git pull --rebase
+            git push
+          fi
+      # Pages must use "GitHub Actions" as its publishing source.
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
