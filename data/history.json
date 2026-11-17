@@ -29,5 +29,30 @@
       "storm": 0,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-17T19:59:06.020732+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "IWM",
+        "from": "neutral",
+        "to": "rainy",
+        "reason": "20営業日騰落 -2.6%・ベンチマーク差 +2.6pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 4,
+      "neutral": 5,
+      "rainy": 8,
+      "storm": 0,
+      "unknown": 6
+    }
   }
 ]
