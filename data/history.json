@@ -103,5 +103,48 @@
       "storm": 1,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-18T19:31:33.413105+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "IWM",
+        "from": "rainy",
+        "to": "neutral",
+        "reason": "20営業日騰落 -2.2%・ベンチマーク差 +3.3pt"
+      },
+      {
+        "symbol": "XLV",
+        "from": "partly",
+        "to": "neutral",
+        "reason": "20営業日騰落 +1.2%・ベンチマーク差 +6.7pt"
+      },
+      {
+        "symbol": "XLK",
+        "from": "storm",
+        "to": "rainy",
+        "reason": "20営業日騰落 -13.3%・ベンチマーク差 -7.8pt"
+      },
+      {
+        "symbol": "XLY",
+        "from": "neutral",
+        "to": "partly",
+        "reason": "20営業日騰落 +3.2%・ベンチマーク差 +8.8pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 3,
+      "neutral": 7,
+      "rainy": 7,
+      "storm": 0,
+      "unknown": 6
+    }
   }
 ]
