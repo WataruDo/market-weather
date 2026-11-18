@@ -85,5 +85,23 @@
       "storm": 1,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-18T11:50:33.115576+00:00",
+    "kind": "自動更新",
+    "changes": [],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 3,
+      "neutral": 6,
+      "rainy": 7,
+      "storm": 1,
+      "unknown": 6
+    }
   }
 ]
