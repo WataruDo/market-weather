@@ -171,5 +171,30 @@
       "storm": 0,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-19T02:37:33.739822+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "XLRE",
+        "from": "partly",
+        "to": "neutral",
+        "reason": "20営業日騰落 +3.7%・ベンチマーク差 +9.3pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 3,
+      "neutral": 7,
+      "rainy": 7,
+      "storm": 0,
+      "unknown": 6
+    }
   }
 ]
