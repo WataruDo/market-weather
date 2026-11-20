@@ -428,5 +428,30 @@
       "storm": 3,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-20T11:48:10.438961+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "XLC",
+        "from": "neutral",
+        "to": "rainy",
+        "reason": "20営業日騰落 -4.3%・ベンチマーク差 +2.0pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 0,
+      "neutral": 6,
+      "rainy": 8,
+      "storm": 3,
+      "unknown": 6
+    }
   }
 ]
