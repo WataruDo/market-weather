@@ -294,5 +294,66 @@
       "storm": 2,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-20T02:22:32.408175+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "QQQ",
+        "from": "storm",
+        "to": "rainy",
+        "reason": "20営業日騰落 -9.1%・ベンチマーク差 -3.5pt"
+      },
+      {
+        "symbol": "IWM",
+        "from": "rainy",
+        "to": "neutral",
+        "reason": "20営業日騰落 -2.3%・ベンチマーク差 +3.2pt"
+      },
+      {
+        "symbol": "XLI",
+        "from": "rainy",
+        "to": "neutral",
+        "reason": "20営業日騰落 -2.2%・ベンチマーク差 +3.4pt"
+      },
+      {
+        "symbol": "XLK",
+        "from": "storm",
+        "to": "rainy",
+        "reason": "20営業日騰落 -13.1%・ベンチマーク差 -7.6pt"
+      },
+      {
+        "symbol": "XLU",
+        "from": "neutral",
+        "to": "partly",
+        "reason": "20営業日騰落 +3.7%・ベンチマーク差 +9.2pt"
+      },
+      {
+        "symbol": "XLP",
+        "from": "neutral",
+        "to": "partly",
+        "reason": "20営業日騰落 +4.7%・ベンチマーク差 +10.2pt"
+      },
+      {
+        "symbol": "XLY",
+        "from": "neutral",
+        "to": "partly",
+        "reason": "20営業日騰落 +3.2%・ベンチマーク差 +8.7pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 3,
+      "neutral": 7,
+      "rainy": 7,
+      "storm": 0,
+      "unknown": 6
+    }
   }
 ]
