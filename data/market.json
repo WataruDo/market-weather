@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "demo": false,
-  "generatedAt": "2026-11-21T04:05:57.569135+00:00",
+  "generatedAt": "2026-11-21T11:15:08.062618+00:00",
   "marketSession": "通常市場日足／ファンド基準価額は未接続",
   "source": "Yahoo Finance（非公式の日次データ）",
   "note": "ChatGPT配信とは別の自動テクニカル分類。時間外・PTS・決算分析・投信分配込み総収益は含まれません。",
@@ -288,8 +288,7 @@
         "volumeRatio": 1.8597,
         "volatility": 72.8307
       },
-      "confidence": "medium",
-      "previousSignal": "rainy"
+      "confidence": "medium"
     },
     "1306": {
       "signal": "rainy",
@@ -856,8 +855,7 @@
         "volumeRatio": 1.2731,
         "volatility": 30.4812
       },
-      "confidence": "medium",
-      "previousSignal": "rainy"
+      "confidence": "medium"
     },
     "XLU": {
       "signal": "neutral",
@@ -999,8 +997,7 @@
         "volumeRatio": 1.6372,
         "volatility": 20.8697
       },
-      "confidence": "medium",
-      "previousSignal": "neutral"
+      "confidence": "medium"
     },
     "XLY": {
       "signal": "neutral",
@@ -1427,32 +1424,13 @@
       "quality": "参考日次データ（リアルタイムではありません）"
     },
     "GOLD_FUT": {
-      "value": 3539.0,
+      "value": 3515.3999,
       "day": "2026-11-20",
       "sourceUrl": "https://finance.yahoo.com/quote/GC=F/",
       "quality": "参考日次データ（リアルタイムではありません）"
     }
   },
-  "changes": [
-    {
-      "symbol": "SMH",
-      "from": "rainy",
-      "to": "storm",
-      "reason": "20営業日騰落 -24.1%・ベンチマーク差 -14.9pt"
-    },
-    {
-      "symbol": "XLE",
-      "from": "rainy",
-      "to": "storm",
-      "reason": "20営業日騰落 -12.7%・ベンチマーク差 -3.5pt"
-    },
-    {
-      "symbol": "XLP",
-      "from": "neutral",
-      "to": "partly",
-      "reason": "20営業日騰落 +2.5%・ベンチマーク差 +11.7pt"
-    }
-  ],
+  "changes": [],
   "coverage": {
     "validPrices": 19,
     "total": 23,
