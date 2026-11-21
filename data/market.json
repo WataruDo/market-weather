@@ -1,25 +1,26 @@
 {
   "schemaVersion": 1,
   "demo": false,
-  "generatedAt": "2026-11-20T20:27:27.910900+00:00",
+  "generatedAt": "2026-11-21T02:23:37.975573+00:00",
   "marketSession": "通常市場日足／ファンド基準価額は未接続",
   "source": "Yahoo Finance（非公式の日次データ）",
   "note": "ChatGPT配信とは別の自動テクニカル分類。時間外・PTS・決算分析・投信分配込み総収益は含まれません。",
   "assets": {
     "SPY": {
       "signal": "rainy",
-      "price": 693.27,
-      "changePct": -3.157,
-      "day": "2026-11-20",
+      "price": 715.87,
+      "changePct": -1.9625,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/SPY/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -8.8%・ベンチマーク差 +0.0pt",
-        "終値は20日線の下、出来高倍率 1.64倍"
+        "20営業日騰落 -6.3%・ベンチマーク差 +0.0pt",
+        "終値は20日線の下、出来高倍率 1.46倍"
       ],
       "history": [
+        761.69,
         773.5,
         773.38,
         767.81,
@@ -63,34 +64,34 @@
         739.95,
         732.44,
         730.2,
-        715.87,
-        693.27
+        715.87
       ],
       "indicators": {
-        "sma5": 722.346,
-        "sma20": 747.9805,
-        "sma50": 760.249,
+        "sma5": 734.566,
+        "sma20": 751.3155,
+        "sma50": 761.6694,
         "rs20": 0.0,
-        "return20": -8.7767,
-        "volumeRatio": 1.6447,
-        "volatility": 25.5359
+        "return20": -6.2948,
+        "volumeRatio": 1.4634,
+        "volatility": 23.4534
       },
       "confidence": "medium"
     },
     "QQQ": {
       "signal": "storm",
-      "price": 612.6295,
-      "changePct": -5.0246,
-      "day": "2026-11-20",
+      "price": 645.04,
+      "changePct": -2.1941,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/QQQ/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -13.0%・ベンチマーク差 -4.3pt",
-        "終値は20日線の下、出来高倍率 1.80倍"
+        "20営業日騰落 -8.4%・ベンチマーク差 -2.1pt",
+        "終値は20日線の下、出来高倍率 1.38倍"
       ],
       "history": [
+        721.45,
         741.47,
         747.46,
         741.21,
@@ -134,34 +135,34 @@
         661.75,
         656.95,
         659.51,
-        645.04,
-        612.6295
+        645.04
       ],
       "indicators": {
-        "sma5": 647.1759,
-        "sma20": 678.7395,
-        "sma50": 711.0408,
-        "rs20": -4.2515,
-        "return20": -13.0282,
-        "volumeRatio": 1.8048,
-        "volatility": 38.7838
+        "sma5": 660.628,
+        "sma20": 683.328,
+        "sma50": 713.0858,
+        "rs20": -2.1413,
+        "return20": -8.4361,
+        "volumeRatio": 1.3768,
+        "volatility": 35.2326
       },
       "confidence": "medium"
     },
     "IWM": {
       "signal": "rainy",
-      "price": 257.86,
-      "changePct": -2.4071,
-      "day": "2026-11-20",
+      "price": 264.22,
+      "changePct": -2.1842,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/IWM/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -6.5%・ベンチマーク差 +2.3pt",
-        "終値は20日線の下、出来高倍率 1.61倍"
+        "20営業日騰落 -4.5%・ベンチマーク差 +1.8pt",
+        "終値は20日線の下、出来高倍率 1.29倍"
       ],
       "history": [
+        284.1,
         285.58,
         287.21,
         281.92,
@@ -205,34 +206,34 @@
         272.94,
         269.05,
         270.12,
-        264.22,
-        257.86
+        264.22
       ],
       "indicators": {
-        "sma5": 266.838,
-        "sma20": 276.2875,
-        "sma50": 278.2886,
-        "rs20": 2.2889,
-        "return20": -6.4878,
-        "volumeRatio": 1.605,
-        "volatility": 27.6634
+        "sma5": 270.774,
+        "sma20": 277.182,
+        "sma50": 278.9092,
+        "rs20": 1.7949,
+        "return20": -4.4999,
+        "volumeRatio": 1.2855,
+        "volatility": 26.5453
       },
       "confidence": "medium"
     },
     "SMH": {
-      "signal": "storm",
-      "price": 403.1775,
-      "changePct": -9.9004,
-      "day": "2026-11-20",
+      "signal": "rainy",
+      "price": 447.48,
+      "changePct": -2.6244,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/SMH/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -23.5%・ベンチマーク差 -14.7pt",
-        "終値は20日線の下、出来高倍率 1.39倍"
+        "20営業日騰落 -14.5%・ベンチマーク差 -8.2pt",
+        "終値は20日線の下、出来高倍率 0.90倍"
       ],
       "history": [
+        573.0,
         596.03,
         607.46,
         601.41,
@@ -276,35 +277,34 @@
         461.9,
         460.1,
         459.54,
-        447.48,
-        403.1775
+        447.48
       ],
       "indicators": {
-        "sma5": 446.4395,
-        "sma20": 494.6449,
-        "sma50": 547.5712,
-        "rs20": -14.7481,
-        "return20": -23.5248,
-        "volumeRatio": 1.3947,
-        "volatility": 71.6798
+        "sma5": 463.154,
+        "sma20": 500.846,
+        "sma50": 550.8782,
+        "rs20": -8.2021,
+        "return20": -14.497,
+        "volumeRatio": 0.8968,
+        "volatility": 64.169
       },
-      "confidence": "medium"
+      "confidence": "medium",
+      "previousSignal": "storm"
     },
     "1306": {
       "signal": "rainy",
-      "price": 402.2,
-      "changePct": 0.0746,
-      "day": "2026-11-19",
+      "price": 386.2,
+      "changePct": -3.9781,
+      "day": "2026-11-20",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/1306.T/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -5.5%・ベンチマーク差 +0.0pt",
-        "終値は20日線の下、出来高倍率 1.21倍"
+        "20営業日騰落 -8.2%・ベンチマーク差 +0.0pt",
+        "終値は20日線の下、出来高倍率 1.65倍"
       ],
       "history": [
-        419.7,
         423.3,
         421.3,
         423.9,
@@ -348,34 +348,34 @@
         410.9,
         404.5,
         401.9,
-        402.2
+        402.2,
+        386.2
       ],
       "indicators": {
-        "sma5": 407.0,
-        "sma20": 412.03,
-        "sma50": 421.492,
+        "sma5": 401.14,
+        "sma20": 410.31,
+        "sma50": 420.666,
         "rs20": 0.0,
-        "return20": -5.4981,
-        "volumeRatio": 1.2108,
-        "volatility": 29.8949
+        "return20": -8.1788,
+        "volumeRatio": 1.6486,
+        "volatility": 32.5633
       },
       "confidence": "medium"
     },
     "1321": {
-      "signal": "rainy",
-      "price": 619.7,
-      "changePct": 0.666,
-      "day": "2026-11-19",
+      "signal": "storm",
+      "price": 589.4,
+      "changePct": -4.8895,
+      "day": "2026-11-20",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/1321.T/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -8.0%・ベンチマーク差 -2.5pt",
-        "終値は20日線の下、出来高倍率 0.66倍"
+        "20営業日騰落 -10.3%・ベンチマーク差 -2.1pt",
+        "終値は20日線の下、出来高倍率 1.91倍"
       ],
       "history": [
-        662.5,
         658.6,
         658.4,
         661.8,
@@ -419,24 +419,26 @@
         622.5,
         614.3,
         615.6,
-        619.7
+        619.7,
+        589.4
       ],
       "indicators": {
-        "sma5": 621.7,
-        "sma20": 638.935,
-        "sma50": 639.2666,
-        "rs20": -2.4763,
-        "return20": -7.9745,
-        "volumeRatio": 0.6578,
-        "volatility": 29.6957
+        "sma5": 612.3,
+        "sma20": 635.555,
+        "sma50": 637.5886,
+        "rs20": -2.1104,
+        "return20": -10.2892,
+        "volumeRatio": 1.9069,
+        "volatility": 33.0205
       },
-      "confidence": "medium"
+      "confidence": "medium",
+      "previousSignal": "rainy"
     },
     "GLD": {
       "signal": "unknown",
-      "price": 322.0134,
-      "changePct": -3.9282,
-      "day": "2026-11-20",
+      "price": 335.18,
+      "changePct": -1.7615,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/GLD/",
@@ -445,6 +447,7 @@
         "金の実質金利・ドル要因の独立検証がないため見通し保留"
       ],
       "history": [
+        401.17,
         398.38,
         400.07,
         392.88,
@@ -488,34 +491,34 @@
         352.93,
         352.48,
         341.19,
-        335.18,
-        322.0134
+        335.18
       ],
       "indicators": {
-        "sma5": 340.7587,
-        "sma20": 360.3782,
-        "sma50": 374.8825,
-        "rs20": -3.3879,
-        "return20": -12.1646,
-        "volumeRatio": 1.9096,
-        "volatility": 31.5113
+        "sma5": 347.446,
+        "sma20": 362.608,
+        "sma50": 376.4176,
+        "rs20": -2.8705,
+        "return20": -9.1653,
+        "volumeRatio": 1.166,
+        "volatility": 29.0059
       },
       "confidence": "unknown"
     },
     "XLV": {
       "signal": "neutral",
-      "price": 177.98,
-      "changePct": 0.293,
-      "day": "2026-11-20",
+      "price": 177.46,
+      "changePct": -2.0478,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLV/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -0.7%・ベンチマーク差 +8.1pt",
-        "終値は20日線の下、出来高倍率 1.11倍"
+        "20営業日騰落 -2.1%・ベンチマーク差 +4.2pt",
+        "終値は20日線の下、出来高倍率 1.50倍"
       ],
       "history": [
+        168.39,
         169.01,
         169.89,
         168.8,
@@ -559,34 +562,34 @@
         187.88,
         185.24,
         181.17,
-        177.46,
-        177.98
+        177.46
       ],
       "indicators": {
-        "sma5": 181.946,
-        "sma20": 184.3825,
-        "sma50": 176.5166,
-        "rs20": 8.0515,
-        "return20": -0.7251,
-        "volumeRatio": 1.1119,
-        "volatility": 22.3246
+        "sma5": 184.12,
+        "sma20": 184.4475,
+        "sma50": 176.2642,
+        "rs20": 4.1768,
+        "return20": -2.118,
+        "volumeRatio": 1.5044,
+        "volatility": 22.614
       },
       "confidence": "medium"
     },
     "XLF": {
       "signal": "neutral",
-      "price": 54.875,
-      "changePct": -1.2684,
-      "day": "2026-11-20",
+      "price": 55.58,
+      "changePct": -1.4888,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLF/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -1.8%・ベンチマーク差 +6.9pt",
-        "終値は20日線の下、出来高倍率 1.42倍"
+        "20営業日騰落 -1.9%・ベンチマーク差 +4.4pt",
+        "終値は20日線の下、出来高倍率 1.57倍"
       ],
       "history": [
+        55.86,
         55.9,
         54.8,
         54.54,
@@ -630,34 +633,34 @@
         58.18,
         57.07,
         56.42,
-        55.58,
-        54.875
+        55.58
       ],
       "indicators": {
-        "sma5": 56.425,
-        "sma20": 57.2008,
-        "sma50": 55.8775,
-        "rs20": 6.943,
-        "return20": -1.8336,
-        "volumeRatio": 1.4154,
-        "volatility": 23.3222
+        "sma5": 57.186,
+        "sma20": 57.252,
+        "sma50": 55.925,
+        "rs20": 4.406,
+        "return20": -1.8888,
+        "volumeRatio": 1.5724,
+        "volatility": 23.3605
       },
       "confidence": "medium"
     },
     "XLI": {
       "signal": "rainy",
-      "price": 157.155,
-      "changePct": -2.606,
-      "day": "2026-11-20",
+      "price": 161.36,
+      "changePct": -2.0041,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLI/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -4.5%・ベンチマーク差 +4.2pt",
-        "終値は20日線の下、出来高倍率 1.13倍"
+        "20営業日騰落 -3.2%・ベンチマーク差 +3.1pt",
+        "終値は20日線の下、出来高倍率 1.33倍"
       ],
       "history": [
+        169.75,
         169.98,
         170.27,
         170.1,
@@ -701,34 +704,34 @@
         165.66,
         164.75,
         164.66,
-        161.36,
-        157.155
+        161.36
       ],
       "indicators": {
-        "sma5": 162.717,
-        "sma20": 166.8463,
-        "sma50": 167.9417,
-        "rs20": 4.242,
-        "return20": -4.5347,
-        "volumeRatio": 1.1349,
-        "volatility": 27.7193
+        "sma5": 165.042,
+        "sma20": 167.2195,
+        "sma50": 168.246,
+        "rs20": 3.0741,
+        "return20": -3.2208,
+        "volumeRatio": 1.3318,
+        "volatility": 26.5718
       },
       "confidence": "medium"
     },
     "XLK": {
       "signal": "storm",
-      "price": 149.84,
-      "changePct": -6.7521,
-      "day": "2026-11-20",
+      "price": 160.69,
+      "changePct": -1.9046,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLK/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -18.2%・ベンチマーク差 -9.4pt",
-        "終値は20日線の下、出来高倍率 1.83倍"
+        "20営業日騰落 -11.9%・ベンチマーク差 -5.6pt",
+        "終値は20日線の下、出来高倍率 1.53倍"
       ],
       "history": [
+        189.6,
         194.85,
         196.27,
         195.34,
@@ -772,34 +775,34 @@
         164.76,
         163.26,
         163.81,
-        160.69,
-        149.84
+        160.69
       ],
       "indicators": {
-        "sma5": 160.472,
-        "sma20": 172.4985,
-        "sma50": 184.4308,
-        "rs20": -9.4463,
-        "return20": -18.223,
-        "volumeRatio": 1.8315,
-        "volatility": 48.9201
+        "sma5": 164.56,
+        "sma20": 174.168,
+        "sma50": 185.1874,
+        "rs20": -5.5786,
+        "return20": -11.8734,
+        "volumeRatio": 1.5279,
+        "volatility": 44.048
       },
       "confidence": "medium"
     },
     "XLE": {
       "signal": "rainy",
-      "price": 60.99,
-      "changePct": 0.1642,
-      "day": "2026-11-20",
+      "price": 60.89,
+      "changePct": -0.6526,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLE/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -12.0%・ベンチマーク差 -3.3pt",
-        "終値は20日線の下、出来高倍率 0.82倍"
+        "20営業日騰落 -9.9%・ベンチマーク差 -3.6pt",
+        "終値は20日線の下、出来高倍率 0.85倍"
       ],
       "history": [
+        64.31,
         62.46,
         61.78,
         62.37,
@@ -843,34 +846,34 @@
         63.69,
         63.36,
         61.29,
-        60.89,
-        60.99
+        60.89
       ],
       "indicators": {
-        "sma5": 62.044,
-        "sma20": 64.638,
-        "sma50": 64.706,
-        "rs20": -3.2528,
-        "return20": -12.0294,
-        "volumeRatio": 0.8184,
-        "volatility": 30.6217
+        "sma5": 62.838,
+        "sma20": 65.055,
+        "sma50": 64.789,
+        "rs20": -3.5912,
+        "return20": -9.886,
+        "volumeRatio": 0.8451,
+        "volatility": 32.6123
       },
       "confidence": "medium"
     },
     "XLU": {
       "signal": "neutral",
-      "price": 42.97,
-      "changePct": -0.093,
-      "day": "2026-11-20",
+      "price": 43.01,
+      "changePct": -1.24,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLU/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 +1.0%・ベンチマーク差 +9.7pt",
-        "終値は20日線の下、出来高倍率 0.80倍"
+        "20営業日騰落 +0.3%・ベンチマーク差 +6.6pt",
+        "終値は20日線の下、出来高倍率 1.41倍"
       ],
       "history": [
+        41.1,
         40.66,
         40.53,
         39.75,
@@ -914,34 +917,34 @@
         44.12,
         43.42,
         43.55,
-        43.01,
-        42.97
+        43.01
       ],
       "indicators": {
-        "sma5": 43.414,
-        "sma20": 43.3925,
-        "sma50": 41.9466,
-        "rs20": 9.74,
-        "return20": 0.9633,
-        "volumeRatio": 0.8014,
-        "volatility": 12.7686
+        "sma5": 43.628,
+        "sma20": 43.372,
+        "sma50": 41.935,
+        "rs20": 6.6214,
+        "return20": 0.3266,
+        "volumeRatio": 1.4054,
+        "volatility": 13.0556
       },
       "confidence": "medium"
     },
     "XLP": {
-      "signal": "partly",
-      "price": 90.8503,
-      "changePct": 1.1021,
-      "day": "2026-11-20",
+      "signal": "neutral",
+      "price": 89.86,
+      "changePct": -1.4477,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLP/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 +2.9%・ベンチマーク差 +11.7pt",
-        "終値は20日線の上、出来高倍率 1.28倍"
+        "20営業日騰落 -0.1%・ベンチマーク差 +6.2pt",
+        "終値は20日線の下、出来高倍率 1.34倍"
       ],
       "history": [
+        82.8,
         81.92,
         82.73,
         82.43,
@@ -985,34 +988,35 @@
         92.6,
         91.46,
         91.18,
-        89.86,
-        90.8503
+        89.86
       ],
       "indicators": {
-        "sma5": 91.1901,
-        "sma20": 90.2665,
-        "sma50": 86.404,
-        "rs20": 11.7115,
-        "return20": 2.9349,
-        "volumeRatio": 1.2848,
-        "volatility": 21.0737
+        "sma5": 91.49,
+        "sma20": 90.137,
+        "sma50": 86.2546,
+        "rs20": 6.1504,
+        "return20": -0.1445,
+        "volumeRatio": 1.3443,
+        "volatility": 21.9824
       },
-      "confidence": "medium"
+      "confidence": "medium",
+      "previousSignal": "partly"
     },
     "XLY": {
       "signal": "neutral",
-      "price": 112.915,
-      "changePct": -2.5587,
-      "day": "2026-11-20",
+      "price": 115.88,
+      "changePct": -2.7852,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLY/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -0.2%・ベンチマーク差 +8.6pt",
-        "終値は20日線の下、出来高倍率 0.92倍"
+        "20営業日騰落 +0.8%・ベンチマーク差 +7.1pt",
+        "終値は20日線の下、出来高倍率 1.25倍"
       ],
       "history": [
+        111.03,
         112.23,
         112.33,
         110.65,
@@ -1056,34 +1060,34 @@
         118.15,
         117.1,
         119.2,
-        115.88,
-        112.915
+        115.88
       ],
       "indicators": {
-        "sma5": 116.649,
-        "sma20": 117.8198,
-        "sma50": 114.1663,
-        "rs20": 8.6131,
-        "return20": -0.1636,
-        "volumeRatio": 0.9212,
-        "volatility": 30.8751
+        "sma5": 118.062,
+        "sma20": 117.829,
+        "sma50": 114.1672,
+        "rs20": 7.0513,
+        "return20": 0.7565,
+        "volumeRatio": 1.2471,
+        "volatility": 30.0375
       },
       "confidence": "medium"
     },
     "XLC": {
       "signal": "rainy",
-      "price": 100.405,
-      "changePct": -2.2918,
-      "day": "2026-11-20",
+      "price": 102.76,
+      "changePct": -2.671,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLC/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -4.8%・ベンチマーク差 +3.9pt",
-        "終値は20日線の下、出来高倍率 0.96倍"
+        "20営業日騰落 -4.3%・ベンチマーク差 +2.0pt",
+        "終値は20日線の下、出来高倍率 1.21倍"
       ],
       "history": [
+        110.81,
         114.75,
         113.53,
         112.56,
@@ -1127,34 +1131,34 @@
         106.82,
         105.26,
         105.58,
-        102.76,
-        100.405
+        102.76
       ],
       "indicators": {
-        "sma5": 104.165,
-        "sma20": 104.4133,
-        "sma50": 108.6331,
-        "rs20": 3.9382,
-        "return20": -4.8384,
-        "volumeRatio": 0.9588,
-        "volatility": 25.0289
+        "sma5": 105.822,
+        "sma20": 104.6685,
+        "sma50": 108.877,
+        "rs20": 1.9567,
+        "return20": -4.3381,
+        "volumeRatio": 1.2115,
+        "volatility": 24.5307
       },
       "confidence": "medium"
     },
     "XLB": {
-      "signal": "neutral",
-      "price": 48.67,
-      "changePct": -1.5176,
-      "day": "2026-11-20",
+      "signal": "rainy",
+      "price": 49.42,
+      "changePct": -2.061,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLB/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -5.1%・ベンチマーク差 +3.6pt",
-        "終値は20日線の下、出来高倍率 0.97倍"
+        "20営業日騰落 -4.4%・ベンチマーク差 +1.9pt",
+        "終値は20日線の下、出来高倍率 1.13倍"
       ],
       "history": [
+        49.99,
         49.71,
         50.53,
         50.28,
@@ -1198,34 +1202,35 @@
         51.47,
         50.84,
         50.46,
-        49.42,
-        48.67
+        49.42
       ],
       "indicators": {
-        "sma5": 50.172,
-        "sma20": 51.9485,
-        "sma50": 50.7928,
-        "rs20": 3.6315,
-        "return20": -5.1452,
-        "volumeRatio": 0.9682,
-        "volatility": 22.959
+        "sma5": 50.884,
+        "sma20": 52.0805,
+        "sma50": 50.8384,
+        "rs20": 1.9033,
+        "return20": -4.3916,
+        "volumeRatio": 1.1294,
+        "volatility": 22.5521
       },
-      "confidence": "medium"
+      "confidence": "medium",
+      "previousSignal": "neutral"
     },
     "XLRE": {
       "signal": "neutral",
-      "price": 42.735,
-      "changePct": -0.3382,
-      "day": "2026-11-20",
+      "price": 42.88,
+      "changePct": -1.6965,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/XLRE/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 +0.4%・ベンチマーク差 +9.2pt",
-        "終値は20日線の下、出来高倍率 0.82倍"
+        "20営業日騰落 +0.8%・ベンチマーク差 +7.1pt",
+        "終値は20日線の下、出来高倍率 1.02倍"
       ],
       "history": [
+        42.53,
         42.59,
         42.5,
         41.84,
@@ -1269,25 +1274,24 @@
         44.25,
         43.59,
         43.62,
-        42.88,
-        42.735
+        42.88
       ],
       "indicators": {
-        "sma5": 43.415,
-        "sma20": 43.6972,
-        "sma50": 42.5807,
-        "rs20": 9.1643,
-        "return20": 0.3876,
-        "volumeRatio": 0.8244,
-        "volatility": 19.99
+        "sma5": 43.742,
+        "sma20": 43.689,
+        "sma50": 42.5944,
+        "rs20": 7.1415,
+        "return20": 0.8467,
+        "volumeRatio": 1.0163,
+        "volatility": 19.9451
       },
       "confidence": "medium"
     },
     "JEPQ": {
       "signal": "unknown",
-      "price": 51.04,
-      "changePct": -4.8294,
-      "day": "2026-11-20",
+      "price": 53.63,
+      "changePct": -1.9203,
+      "day": "2026-11-19",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/JEPQ/",
@@ -1296,6 +1300,7 @@
         "オプション収入と分配込み総収益が未検証。通常ETFと同じ基準では判定しない"
       ],
       "history": [
+        60.24,
         61.01,
         61.17,
         61.1,
@@ -1339,17 +1344,16 @@
         54.86,
         54.45,
         54.68,
-        53.63,
-        51.04
+        53.63
       ],
       "indicators": {
-        "sma5": 53.732,
-        "sma20": 56.2105,
-        "sma50": 58.7054,
-        "rs20": 1.2075,
-        "return20": -11.8206,
-        "volumeRatio": 1.6662,
-        "volatility": 35.5197
+        "sma5": 54.762,
+        "sma20": 56.58,
+        "sma50": 58.8802,
+        "rs20": 1.106,
+        "return20": -7.3302,
+        "volumeRatio": 1.0478,
+        "volatility": 31.8471
       },
       "confidence": "unknown"
     },
@@ -1412,7 +1416,7 @@
   },
   "macro": {
     "USDJPY": {
-      "value": 158.517,
+      "value": 159.707,
       "day": "2026-11-20",
       "sourceUrl": "https://finance.yahoo.com/quote/JPY=X/",
       "quality": "参考日次データ（リアルタイムではありません）"
@@ -1424,13 +1428,38 @@
       "quality": "参考日次データ（リアルタイムではありません）"
     },
     "GOLD_FUT": {
-      "value": 3520.1001,
+      "value": 3539.0,
       "day": "2026-11-20",
       "sourceUrl": "https://finance.yahoo.com/quote/GC=F/",
       "quality": "参考日次データ（リアルタイムではありません）"
     }
   },
-  "changes": [],
+  "changes": [
+    {
+      "symbol": "SMH",
+      "from": "storm",
+      "to": "rainy",
+      "reason": "20営業日騰落 -14.5%・ベンチマーク差 -8.2pt"
+    },
+    {
+      "symbol": "1321",
+      "from": "rainy",
+      "to": "storm",
+      "reason": "20営業日騰落 -10.3%・ベンチマーク差 -2.1pt"
+    },
+    {
+      "symbol": "XLP",
+      "from": "partly",
+      "to": "neutral",
+      "reason": "20営業日騰落 -0.1%・ベンチマーク差 +6.2pt"
+    },
+    {
+      "symbol": "XLB",
+      "from": "neutral",
+      "to": "rainy",
+      "reason": "20営業日騰落 -4.4%・ベンチマーク差 +1.9pt"
+    }
+  ],
   "coverage": {
     "validPrices": 19,
     "total": 23,
