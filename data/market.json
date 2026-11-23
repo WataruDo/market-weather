@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "demo": false,
-  "generatedAt": "2026-11-23T03:50:20.096634+00:00",
+  "generatedAt": "2026-11-23T12:57:47.641946+00:00",
   "marketSession": "通常市場日足／ファンド基準価額は未接続",
   "source": "Yahoo Finance（非公式の日次データ）",
   "note": "ChatGPT配信とは別の自動テクニカル分類。時間外・PTS・決算分析・投信分配込み総収益は含まれません。",
@@ -1412,7 +1412,7 @@
   },
   "macro": {
     "USDJPY": {
-      "value": 158.955,
+      "value": 159.049,
       "day": "2026-11-23",
       "sourceUrl": "https://finance.yahoo.com/quote/JPY=X/",
       "quality": "参考日次データ（リアルタイムではありません）"
@@ -1424,8 +1424,8 @@
       "quality": "参考日次データ（リアルタイムではありません）"
     },
     "GOLD_FUT": {
-      "value": 3606.6001,
-      "day": "2026-11-22",
+      "value": 3616.5,
+      "day": "2026-11-23",
       "sourceUrl": "https://finance.yahoo.com/quote/GC=F/",
       "quality": "参考日次データ（リアルタイムではありません）"
     }
