@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "demo": false,
-  "generatedAt": "2026-11-25T05:31:42.264713+00:00",
+  "generatedAt": "2026-11-25T08:43:38.046387+00:00",
   "marketSession": "通常市場日足／ファンド基準価額は未接続",
   "source": "Yahoo Finance（非公式の日次データ）",
   "note": "ChatGPT配信とは別の自動テクニカル分類。時間外・PTS・決算分析・投信分配込み総収益は含まれません。",
@@ -288,21 +288,20 @@
         "volumeRatio": 1.1081,
         "volatility": 94.0429
       },
-      "confidence": "medium",
-      "previousSignal": "rainy"
+      "confidence": "medium"
     },
     "1306": {
       "signal": "rainy",
-      "price": 393.7,
-      "changePct": -0.5557,
+      "price": 394.7,
+      "changePct": -0.3031,
       "day": "2026-11-25",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/1306.T/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -5.9%・ベンチマーク差 +0.0pt",
-        "終値は20日線の下、出来高倍率 0.51倍"
+        "20営業日騰落 -5.7%・ベンチマーク差 +0.0pt",
+        "終値は20日線の下、出来高倍率 0.64倍"
       ],
       "history": [
         423.9,
@@ -349,31 +348,31 @@
         402.2,
         386.2,
         395.9,
-        393.7
+        394.7
       ],
       "indicators": {
-        "sma5": 395.98,
-        "sma20": 408.055,
-        "sma50": 419.412,
+        "sma5": 396.18,
+        "sma20": 408.105,
+        "sma50": 419.432,
         "rs20": 0.0,
-        "return20": -5.9034,
-        "volumeRatio": 0.5103,
-        "volatility": 33.9622
+        "return20": -5.6644,
+        "volumeRatio": 0.6439,
+        "volatility": 33.947
       },
       "confidence": "medium"
     },
     "1321": {
-      "signal": "rainy",
-      "price": 593.1,
-      "changePct": -2.8024,
+      "signal": "storm",
+      "price": 595.0,
+      "changePct": -2.491,
       "day": "2026-11-25",
       "session": "regular",
       "sourceName": "Yahoo Finance（日次・非公式）",
       "sourceUrl": "https://finance.yahoo.com/quote/1321.T/",
       "quality": "通常市場の確定日足（非公式ソース）",
       "reasons": [
-        "20営業日騰落 -8.5%・ベンチマーク差 -2.6pt",
-        "終値は20日線の下、出来高倍率 0.96倍"
+        "20営業日騰落 -8.2%・ベンチマーク差 -2.6pt",
+        "終値は20日線の下、出来高倍率 1.18倍"
       ],
       "history": [
         661.8,
@@ -420,18 +419,19 @@
         619.7,
         589.4,
         610.2,
-        593.1
+        595.0
       ],
       "indicators": {
-        "sma5": 605.6,
-        "sma20": 630.645,
-        "sma50": 634.4126,
-        "rs20": -2.6253,
-        "return20": -8.5287,
-        "volumeRatio": 0.9604,
-        "volatility": 37.0616
+        "sma5": 605.98,
+        "sma20": 630.74,
+        "sma50": 634.4506,
+        "rs20": -2.5712,
+        "return20": -8.2357,
+        "volumeRatio": 1.1839,
+        "volatility": 36.8116
       },
-      "confidence": "medium"
+      "confidence": "medium",
+      "previousSignal": "rainy"
     },
     "GLD": {
       "signal": "unknown",
@@ -1413,7 +1413,7 @@
   },
   "macro": {
     "USDJPY": {
-      "value": 159.467,
+      "value": 159.426,
       "day": "2026-11-25",
       "sourceUrl": "https://finance.yahoo.com/quote/JPY=X/",
       "quality": "参考日次データ（リアルタイムではありません）"
@@ -1425,7 +1425,7 @@
       "quality": "参考日次データ（リアルタイムではありません）"
     },
     "GOLD_FUT": {
-      "value": 3546.0,
+      "value": 3560.8999,
       "day": "2026-11-25",
       "sourceUrl": "https://finance.yahoo.com/quote/GC=F/",
       "quality": "参考日次データ（リアルタイムではありません）"
@@ -1433,10 +1433,10 @@
   },
   "changes": [
     {
-      "symbol": "SMH",
+      "symbol": "1321",
       "from": "rainy",
       "to": "storm",
-      "reason": "20営業日騰落 -23.5%・ベンチマーク差 -16.9pt"
+      "reason": "20営業日騰落 -8.2%・ベンチマーク差 -2.6pt"
     }
   ],
   "coverage": {
