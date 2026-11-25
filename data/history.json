@@ -955,5 +955,36 @@
       "storm": 0,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-25T20:36:51.570939+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "QQQ",
+        "from": "rainy",
+        "to": "storm",
+        "reason": "20営業日騰落 -13.2%・ベンチマーク差 -5.7pt"
+      },
+      {
+        "symbol": "XLI",
+        "from": "neutral",
+        "to": "rainy",
+        "reason": "20営業日騰落 -3.5%・ベンチマーク差 +4.0pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 3,
+      "neutral": 7,
+      "rainy": 6,
+      "storm": 1,
+      "unknown": 6
+    }
   }
 ]
