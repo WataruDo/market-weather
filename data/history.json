@@ -856,5 +856,30 @@
       "storm": 0,
       "unknown": 6
     }
+  },
+  {
+    "at": "2026-11-25T05:31:42.264713+00:00",
+    "kind": "自動更新",
+    "changes": [
+      {
+        "symbol": "SMH",
+        "from": "rainy",
+        "to": "storm",
+        "reason": "20営業日騰落 -23.5%・ベンチマーク差 -16.9pt"
+      }
+    ],
+    "coverage": {
+      "validPrices": 19,
+      "total": 23,
+      "rated": 17
+    },
+    "signalCounts": {
+      "sunny": 0,
+      "partly": 2,
+      "neutral": 9,
+      "rainy": 5,
+      "storm": 1,
+      "unknown": 6
+    }
   }
 ]
