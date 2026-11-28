@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "demo": false,
-  "generatedAt": "2026-11-27T23:30:18.564331+00:00",
+  "generatedAt": "2026-11-28T04:47:56.337604+00:00",
   "marketSession": "通常市場日足／ファンド基準価額は未接続",
   "source": "Yahoo Finance（非公式の日次データ）",
   "note": "ChatGPT配信とは別の自動テクニカル分類。時間外・PTS・決算分析・投信分配込み総収益は含まれません。",
@@ -359,8 +359,7 @@
         "volumeRatio": 0.5519,
         "volatility": 34.5846
       },
-      "confidence": "medium",
-      "previousSignal": "rainy"
+      "confidence": "medium"
     },
     "1321": {
       "signal": "rainy",
@@ -995,7 +994,7 @@
         "sma50": 87.0416,
         "rs20": 10.4375,
         "return20": 5.1032,
-        "volumeRatio": 0.5464,
+        "volumeRatio": 0.5463,
         "volatility": 20.4504
       },
       "confidence": "medium"
@@ -1279,7 +1278,7 @@
         "sma50": 42.6236,
         "rs20": 7.8424,
         "return20": 2.5081,
-        "volumeRatio": 0.5537,
+        "volumeRatio": 0.5538,
         "volatility": 19.3642
       },
       "confidence": "medium"
@@ -1413,7 +1412,7 @@
   },
   "macro": {
     "USDJPY": {
-      "value": 159.515,
+      "value": 159.281,
       "day": "2026-11-27",
       "sourceUrl": "https://finance.yahoo.com/quote/JPY=X/",
       "quality": "参考日次データ（リアルタイムではありません）"
@@ -1431,14 +1430,7 @@
       "quality": "参考日次データ（リアルタイムではありません）"
     }
   },
-  "changes": [
-    {
-      "symbol": "1306",
-      "from": "rainy",
-      "to": "neutral",
-      "reason": "20営業日騰落 -4.4%・ベンチマーク差 +0.0pt"
-    }
-  ],
+  "changes": [],
   "coverage": {
     "validPrices": 19,
     "total": 23,
